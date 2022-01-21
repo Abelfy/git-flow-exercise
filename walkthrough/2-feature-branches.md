@@ -1,44 +1,33 @@
-# 2. Feature Branches
+# 2. Branches de Feature 
 
 | Date | Phase |
 | --- | --- |
-|  February 1<sup>st</sup> | Development |
+| 1<sup>er</sup> Février | Development |
 
-`v1.0` was pushed to production yesterday without issue. All code from the release has been merged into the `master` and `develop` branches of the project. The new recipes for February have been sent to the team:
+La version 1.0 a été mise en production hier sans problème. Tout le code de cette version a été fusionné dans les branches `master` et `develop` du projet. Les nouvelles recettes pour février ont été envoyées à l'équipe :
 
-| Writer | Recipe |
+| Rédacteur  | Recette  |
 | --- | --- |
 | Cuba Pudding Jr. | http://allrecipes.com/recipe/228654/quick-oatmeal-pancakes/ |
 | Eggs Benny | http://allrecipes.com/recipe/174361/asparagus-with-cranberries-and-pine-nuts/ |
 | John Lemon | http://allrecipes.com/recipe/18241/candied-carrots/ |
 | Madame Croque | http://www.realsimple.com/food-recipes/browse-all-recipes/roast-pork-sandwich/ |
 
-## :running: Activities
+## :running: Activités
 
-Follow along with the activities below to walk through the process of creating a feature branch and creating a Pull Request to merge your changes into the source repository.
+Suivez les activités ci-dessous pour parcourir le processus de création d'une branche de fonctionnalité et de création d'une demande d'extraction pour fusionner vos changements dans le référentiel source.
 
-### 1 - Create a Feature Branch
+### 1 - Créer une branche de fonctionnalité
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
-Choose a writer &mdash; you will add their recipe to the project within a new feature branch. If there are more writers than people, that is fine, only one feature branch will ultimately be merged.
+Choisissez un rédacteur &mdash ; vous ajouterez sa recette au projet dans une nouvelle branche de fonctionnalité. S'il y a plus de rédacteurs que de personnes, ce n'est pas grave, une seule branche de fonctionnalité sera finalement fusionnée.
 
-Create a feature branch off of the `develop` branch that contains the writer's name and the month of the pick:
+Créez une branche de fonctionnalité à partir de la branche `develop` qui contient le nom de l'auteur et le mois de la recette :
 ```sh
 $ git checkout develop
 
-$ git branch cuba-pudding-jr-feb
-
-$ git branch
-  cuba-pudding-jr-feb
-  develop
-* master
-```
-
-Next, switch to the newly created feature branch:
-```sh
-$ git checkout cuba-pudding-jr-feb
-Switched to branch 'cuba-pudding-jr-feb'
+$ git checkout -b cuba-pudding-jr-feb
 
 $ git branch
 * cuba-pudding-jr-feb
@@ -46,44 +35,30 @@ $ git branch
   master
 ```
 
-:bulb: You can simplify the last two steps to create and switch to a branch with a single command:
+:bulb : Les branches des fonctionnalités seront nommées de telle sorte que quelqu'un d'autre puisse regarder les branches en cours et avoir une idée approximative du travail effectué sur chaque branche.
+
+:bulb: Vous pouvez créer une branche sans l'extraire immédiatement via la commande `git branch` :
 ```sh
-$ git checkout -b cuba-pudding-jr-feb
-Switched to a new branch 'cuba-pudding-jr-feb'
+$ git branch cuba-pudding-jr-feb
 ```
 
----
+### 2 - Apporter des modifications au projet
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
+__Tous les membres de l'équipe__
 
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
+Dans votre éditeur de texte, effectuez les modifications suivantes :
 
----
+1. Ajoutez la nouvelle recette dans le répertoire [`/app/recipe/feb/`](/app/recipe/feb/).
+2. Mettez à jour la page de l'écrivain dans le répertoire [`/app/writer/`](/app/writer/).
+3. Mettre à jour le fichier principal [`/app/index.md`](/app/index.md).
 
-### 2 - Make Changes to the Project
+Puisque d'autres personnes vont faire des changements en même temps, faites attention à ne pas modifier les lignes de code qui ne sont pas pertinentes pour votre changement.
 
-__All Team Members___
+### 3 - Examen des modifications
 
-In your text editor, make the following changes:
-1. Add the new recipe under the [`/app/recipe/feb/`](/app/recipe/feb/) directory.
-2. Update the writer's page in the [`/app/writer/`](/app/writer/) direcotry.
-3. Update the main mage [`/app/index.md`](/app/index.md).
+__Tous les membres de l'équipe__
 
-Since other people are going to be making changes at the same time, be careful not to make changes to lines of code that are not relevant to your change.
-
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 3 - Diff Changes
-
-__All Team Members___
-
-If you view the current git status, you will see 2 files with unstaged changes and a new folder that has not been tracked by git:
+Si vous regardez l'état actuel de git, vous verrez 2 fichiers avec des changements non-stagés et un nouveau dossier qui n'a pas été suivi par git :
 ```sh
 $ git status
 On branch cuba-pudding-jr-feb
@@ -102,7 +77,7 @@ Untracked files:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-If you run a diff, you should see the changes that have been made to files that are tracked by git:
+Si vous lancez un diff, vous devriez voir les modifications qui ont été apportées aux fichiers qui sont suivis par git :
 ```sh
 $ git diff
 diff --git a/app/index.md b/app/index.md
@@ -114,7 +89,7 @@ index ac3abad..9777cd5 100644
  ### [Cuba Pudding Jr.](writer/cuba-pudding-jr.md) | cubapud@flavor.magazine
 
 -[Grilled Peach Salad](recipe/jan/grilled-peach-salad.md)
-+[Quick Oatmeal Pancakes](		recipe/feb/quick-oatmeal-pancakes.md)
++[Quick Oatmeal Pancakes](recipe/feb/quick-oatmeal-pancakes.md)
 
  ### [Eggs Benny](writer/eggs-benny.md) | englishmuffin@flavor.magazine
 
@@ -131,25 +106,16 @@ index 250faea..7315699 100644
 (END)
 ```
 
-:bulb: Press <kbd>Enter</kbd> to show additional diff lines (if necessary) and <kbd>Ctrl</kbd>+<kbd>C</kbd> to close the diff
+:bulb: Appuyez sur <kbd>Enter</kbd> pour afficher d'avantages de lignes de diff (si nécessaire) et <kbd>Ctrl</kbd>+<kbd>C</kbd> pour fermer le diff.
 
-If you see that you have changes to unexpected lines, please correct them at this time.
+Si vous trouvez des changements qui n'aurait pas du avoir lieu corriger les maintenant.
 
----
+### 4 - Mise en attente et validation des changements
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 4 - Stage and Commit Changes
-
-Stage all of the changes that you've made thus far:
+Mettez en attente toutes les modifications que vous avez faites jusqu'à présent :
 ```sh
-$ git add -A
-# Careful, -A stages changes to all tracked files, untracks files that have been
-# removed, and tracks files that have been added.
+$ git add app/*
+# Attention, l'utilisation d'un joker ajoute tous les fichiers modifiés qui correspondent au motif.
 
 $ git status
 On branch cuba-pudding-jr-feb
@@ -161,61 +127,41 @@ Changes to be committed:
         modified:   app/writer/cuba-pudding-jr.md
 ```
 
-:bulb: If you run a diff now, you will not see any changes. This is because `git diff` compares all staged changes to unstaged changes.
+:bulb: Si vous faites un diff maintenant vous ne verrez aucun changement, c'est parce que `git diff` compare tous les changements staged aux changements unstaged.
 
-:bulb: You may find that the process of viewing diffs, staging files, and making commits is easier in GitHub Desktop
+:bulb : Vous pouvez trouver que le processus d'affichage des différences, de mise à disposition des fichiers et de validation est plus facile dans GitHub Desktop.
 
-Now that all of your changes have been staged, commit them with an appropriate message:
+Maintenant que toutes vos modifications ont été mises à disposition, livrez-les avec un message approprié :
 ```sh
 $ git commit -m "Adding Cuba Pudding Jr.'s Feb Recipe"
 ```
 
----
+### 5 -  Pousser les changements vers le Fork
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 5 - Push Changes to Fork
-
-Now that your changes have been committed, let's get them published to your Fork on GitHub:
+Maintenant que vos changements ont été validés, publions-les dans votre Fork sur GitHub :
 ```sh
-$ git push origin cuba-pudding-jr-feb
+$ git push -u me HEAD
 ```
 
-:bulb: Make sure you type the correct branch name.
+:bulb : Spécifier la référence HEAD indique à git de pousser sur la même branche que le HEAD de votre projet local, qui est actuellement votre branche de fonctionnalité.
 
-Navigate to your Fork on Github, you should now see your new branch in the interface.
+:bulb : Le drapeau `-u` indique à git de lier votre branche locale avec la branche distante de sorte que les futures commandes de push & pull ne nécessitent pas que vous
+de spécifier d'où vous voulez pousser ou tirer du code.
 
----
+Naviguez vers votre Fork sur Github, vous devriez maintenant voir votre nouvelle branche dans l'interface.
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
 
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
+### 6 - Ouvrir une Pull Request
 
----
+Sur votre fork GitHub, vous devriez voir un bloc en haut indiquant que vous avez récemment poussé une branche. Si ce bloc est visible, cliquez sur le bouton "Compare & Pull Request" à droite de votre branche de fonctionnalité. S'il n'est pas disponible, choisissez votre branche dans la liste déroulante juste au-dessus de la liste du répertoire de code, puis cliquez sur le bouton "New Pull Request" à droite de la liste déroulante.
 
-### 6 - Open a Pull Request
+Dans l'interface de la demande de mise à jour, assurez-vous que la fourche de base est `source-username\repository-name` et que la branche de base est `develop`. Cela signifie que vous demandez à fusionner vos modifications dans la branche `develop` du dépôt source. À ce moment-là, assurez-vous également que les branches head fork et compare correspondent à votre branche GitHub Fork et feature branch, respectivement.
 
-On your GitHub fork, you should see a block at the top indicating that you've recently pushed a branch. If this is visible, click the "Compare & Pull Request" button to the right of your feature branch. If it is not available, choose your branch in the dropdown just above the code directory listing and then click the "New Pull Request" button to the right of the dropdown.
+Veuillez rédiger un message documentant les changements que vous avez effectués, puis cliquez sur le bouton vert "Create pull request".
 
-On the Pull Request interface, make sure that the base fork is `source-username\repository-name` and the base branch is `develop`. This means that you are requesting to merge your changes into the `develop` branch of the source repository. At this time also make sure that the head fork and compare branches match your GitHub Fork and feature branch, respectively.
+## Suivant
 
-Please draft a message documenting the changes that you've made and then click the green "Create pull request" button.
-
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-## Next
-
-Next we will walk through the process of reviewing a Pull Request, viewing someone else's code locally, and merging a Pull Request.
+Ensuite, nous allons parcourir le processus de révision d'une demande de retrait, de visualisation locale du code d'une autre personne et de fusion d'une pull request.
 
 [3. Code Review](3-code-review.md)
 
