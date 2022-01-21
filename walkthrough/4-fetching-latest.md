@@ -1,29 +1,29 @@
-# 4. Fetching Latest
+# 4. Récupérer la dernière version
 
 | Date | Phase |
 | --- | --- |
-|  February 3<sup>rd</sup> | Development |
+| 3 Février | Development |
 
-Now that mods have been merged into the development branch, it is prudent to get the latest version of the code locally.
+Maintenant que les mods ont été fusionnés dans la branche de développement, il est prudent de récupérer localement la dernière version du code.
 
-## :running: Activities
+## :running: Activités
 
-Follow along with the activities below to walk through the process of pulling the latest commits to the `origin/develop` branch into your local tracking branch.
+Suivez les activités ci-dessous pour suivre le processus d'extraction des derniers commits de la branche `origin/develop` dans votre branche de suivi locale.
 
-### 1 - Pull Latest from `develop`
+### 1 - Extraire les derniers commits de `develop`.
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
-Pull the latest commits to the `develop` branch from the source repository:
+Tirez les derniers commits de la branche `develop` depuis le dépôt source :
 ```sh
 $ git checkout develop
 
 $ git pull
 ```
 
-## Next
+## Suivant
 
-Next we will walk through the process of applying a hotfix to the code in production.
+Ensuite, nous allons suivre le processus d'application d'un correctif au code en production.
 
 [Go](5-hotfix.md)
 
