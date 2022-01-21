@@ -14,6 +14,8 @@ Welcome to _Flavor_, the only place on the planet where your taste buds won't be
 
 - Febuary: [Cuba Pudding Jr.](../recipe/feb/Quick-Oatmeal-Pancakes.md)
 
+[Quick Oatmeal Pancackes](recipe/feb/Quick-oatmeal-pancakes.md)
+
 ### [Eggs Benny](writer/eggs-benny.md) | englishmuffin@flavor.magazine
 
 [Vanilla Panna Cotta](recipe/jan/vanilla-panna-cotta.md)
