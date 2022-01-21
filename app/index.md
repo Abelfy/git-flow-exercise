@@ -8,8 +8,11 @@ Welcome to _Flavor_, the only place on the planet where your taste buds won't be
 
 ### [Cuba Pudding Jr.](writer/cuba-pudding-jr.md) | cubapud@flavor.magazine
 
+
 [Grilled Peach Salad](recipe/jan/grilled-peach-salad.md)
 [Quick oatmeal pancakes](recipe/feb/quick-oatmeal-pancakes.md)
+
+- Febuary: [Cuba Pudding Jr.](../recipe/feb/Quick-Oatmeal-Pancakes.md)
 
 ### [Eggs Benny](writer/eggs-benny.md) | englishmuffin@flavor.magazine
 
