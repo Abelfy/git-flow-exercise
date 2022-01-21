@@ -1,19 +1,19 @@
 # 1. Setup
 
-In order to contribute to a GitHub project, you will need two things: a GitHub Fork and a local clone of this project.
+Afin de contribuer à un projet GitHub, vous aurez besoin de deux choses : un Fork GitHub et un clone local de ce projet.
 
-## :running: Activities
+## :running: Activités
 
-Follow along with the activities below to get yourself ready for the rest of the walkthrough.
+Suivez les activités ci-dessous pour vous préparer à la suite de l'exercice.
 
 
-### 1 - Fork a Source Repository
+### 1 - Fork un dépôt de sources
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
-Fork the source repository:
-   1. Visit https://github.com/source-username/repository-name.
-   2. Click the "fork" button, and choose your personal GitHub account if prompted.
+Fork le dépôt de sources :
+   1. Visitez https://github.com/Abelfy/git-flow-exercise/.
+   2. Cliquez sur le bouton "fork", et choisissez votre compte GitHub personnel si vous y êtes invité.
 
 ---
 
@@ -23,9 +23,9 @@ Fork the source repository:
 
 ---
 
-### 2 - Clone your Fork
+### 2 - Cloner votre Fork
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
 Clone this project to your local machine:
 ```sh
@@ -37,7 +37,7 @@ $ cd repository-name
 # change working directory to the cloned repository
 ```
 
-View existing remotes:
+Voir les remotes existants :
 ```sh
 $ git remote
 origin
@@ -47,7 +47,7 @@ origin https://github.com/source-username/repository-name.git (fetch)
 origin https://github.com/source-username/repository-name.git (push)
 ```
 
-You should see an `origin` remote that points to the source GitHub project:
+Vous devriez voir un remote `origin` qui pointe vers le projet GitHub source :
 ```sh
 $ git remote show origin
 * remote origin
@@ -63,7 +63,7 @@ $ git remote show origin
     master  pushes to master (up to date)
 ```
 
-View existing branches:
+Voir les branches existantes :
 ```sh
 $ git branch
 # show local branches
@@ -83,19 +83,11 @@ $ git branch -a
   remotes/origin/master
 ```
 
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
 ### 3 - Add Remote for your GitHub Fork
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
-Add a `me` remote:
+Ajoutez un remote `me` :
 ```sh
 $ git remote add me https://github.com/your-username/repository-name.git
 # add the me remote
@@ -107,7 +99,7 @@ me https://github.com/your-username/repository-name.git (fetch)
 me https://github.com/your-username/repository-name.git (push)
 ```
 
-You should see a `me` remote that points to your GitHub Fork repository:
+Vous devriez voir un remote `me` qui pointe vers votre dépôt GitHub Fork :
 ```sh
 $ git remote show me
 * remote me
@@ -121,11 +113,11 @@ $ git remote show me
     master  pushes to master (up to date)
 ```
 
-Maintainers will need to create branches and push directly to the source repository.
+Les mainteneurs devront créer des branches et pousser directement vers le dépôt des sources.
 
-All team members will need to pull changes from the source repository in order to branch from for feature branches.
+Tous les membres de l'équipe devront extraire les changements du référentiel source afin de créer des branches pour les fonctionnalités.
 
-Fetch branch data from the `origin` remote:
+Récupérez les données de la branche depuis le dépôt distant `origin` :
 ```sh
 $ git fetch origin
 From https://github.com/source-username/repository-name
@@ -141,31 +133,23 @@ $ git branch -a
   remotes/me/master
 ```
 
----
+### 4 - Configurer les branches locales
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
+__Tous les membres de l'équipe__
 
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 4 - Configure Local Branches
-
-__All Team Members__
-
-By now you should have noticed that you do not have a local `develop` branch
+A ce stade, vous devriez avoir remarqué que vous n'avez pas de branche locale `develop`.
 ```sh
 $ git branch
 * master
 ```
 
-Create a `develop` branch that tracks from `origin`'s `develop` branch:
+Créez une branche `develop` qui suit la branche `develop` de `origin` :
 ```sh
 $ git checkout -b develop --track origin/develop
 Branch develop set up to track remote branch develop from origin
 ```
 
-Notice that viewing the details for the `origin` remote indicates that the local `develop` and `master` branches are configured to push to and pull from the source GitHub repository's branches:
+Remarquez que l'affichage des détails pour la branche distante `origin` indique que les branches locales `develop` et `master` sont configurées pour pousser vers et tirer depuis les branches du dépôt GitHub source :
 ```sh
 $ git remote show origin
 ...
@@ -177,26 +161,18 @@ $ git remote show origin
      master  pushes to master (up to date)
 ```
 
-:bulb: The `-vv` flag for the `git branch` command will also show the remote branches that are tracked by your local branches (in brackets):
+:bulb: Le drapeau `-vv` pour la commande `git branch` montrera aussi les branches distantes qui sont suivies par vos branches locales (entre cochets) :
 ```sh
 $ git branch -vv
 * develop 3e03a92 [origin/develop] Create example app
   master  3e03a92 [origin/master] Create example app
 ```
 
-You should now be ready to move on to the rest of the walkthrough. If you'd like to see the repository you've created on your local machine in GitHub desktop, you can add a repository by choosing a local path.
-
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
+Vous devriez maintenant être prêt à passer à la suite du guide. Si vous souhaitez voir le dépôt que vous avez créé sur votre machine locale dans le bureau GitHub, vous pouvez ajouter un dépôt en choisissant un chemin local.
 
 ## Next
 
-Next we will walk through the process of creating feature branches, publishing changes to GitHub, and making a request to merge changes into the source repository using a Pull Request.
+Ensuite, nous allons suivre le processus de création de branches de fonctionnalités, de publication des modifications sur GitHub et de demande de fusion des modifications dans le référentiel source à l'aide d'une demande de reprise.
 
 [Go](2-feature-branches.md)
 
