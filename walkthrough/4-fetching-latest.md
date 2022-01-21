@@ -1,43 +1,29 @@
-# 4. Fetching Latest
+# 4. Récupérer la dernière version
 
 | Date | Phase |
 | --- | --- |
-|  February 3<sup>rd</sup> | Development |
+| 3 Février | Development |
 
-Now that mods have been merged into the development branch, it is prudent to get the latest version of the code locally.
+Maintenant que les mods ont été fusionnés dans la branche de développement, il est prudent de récupérer localement la dernière version du code.
 
-## :running: Activities
+## :running: Activités
 
-Follow along with the activities below to walk through the process of fetching the latest commits to the `source/develop` branch, merging them into your local `develop` branch, and publishing them back out to your GitHub fork.
+Suivez les activités ci-dessous pour suivre le processus d'extraction des derniers commits de la branche `origin/develop` dans votre branche de suivi locale.
 
-### 1 - Fetch Latest from Source
+### 1 - Extraire les derniers commits de `develop`.
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
-Fetch the latest commits from the source repository:
-```sh
-$ git fetch source
-```
-
-Merge the new commits contained in the `source/develop` branch into your `develop` branch:
+Tirez les derniers commits de la branche `develop` depuis le dépôt source :
 ```sh
 $ git checkout develop
-# switch to develop branch
 
-$ git merge source/develop
-# merge commits from source/develop into your current branch (develop)
+$ git pull
 ```
 
-Your local `develop` branch is now up to date with the source `develop` branch.
+## Suivant
 
-Now, publish your develop branch out to your GitHub fork:
-```sh
-$ git push origin develop
-```
-
-## Next
-
-Next we will walk through the process of applying a hotfix to the code in production.
+Ensuite, nous allons suivre le processus d'application d'un correctif au code en production.
 
 [Go](5-hotfix.md)
 
