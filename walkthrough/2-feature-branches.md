@@ -4,7 +4,7 @@
 | --- | --- |
 | 1<sup>er</sup> Février | Development |
 
-vLa version 1.0 a été mise en production hier sans problème. Tout le code de cette version a été fusionné dans les branches `master` et `develop` du projet. Les nouvelles recettes pour février ont été envoyées à l'équipe :
+La version 1.0 a été mise en production hier sans problème. Tout le code de cette version a été fusionné dans les branches `master` et `develop` du projet. Les nouvelles recettes pour février ont été envoyées à l'équipe :
 
 | Rédacteur  | Recette  |
 | --- | --- |
