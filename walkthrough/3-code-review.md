@@ -17,6 +17,7 @@ __All Team Members__
 Navigate to the source repository on GitHub, click the "Pull Requests" tab, and click on the Pull Request opened by the team member sitting to your right.
 
 Review the following things:
+
 1. Verify that the user is requesting to merge their feature branch into the `develop` branch.
 2. Check to see if there is any important information on the Conversation tab.
 3. Check the Commits tab to get a high-level view of the individual changes that were made.
@@ -42,14 +43,14 @@ If you are curious to run someone else's code locally, you will need to set up a
 
 Create a remote pointing to the person to your right's Fork:
 ```sh
-$ git remote add teammate https://github.com/teammmate-username/repository-name.git
+$ git remote add teammate https://github.com/teammate-username/repository-name.git
 # add the teammate remote
 
 $ git remote -v
-origin https://github.com/username/repository-name.git (fetch)
-origin https://github.com/username/repository-name.git (push)
-source https://github.com/source-username/repository-name.git (fetch)
-source https://github.com/source-username/repository-name.git (push)
+me https://github.com/your-username/repository-name.git (fetch)
+me https://github.com/your-username/repository-name.git (push)
+origin https://github.com/source-username/repository-name.git (fetch)
+origin https://github.com/source-username/repository-name.git (push)
 teammate https://github.com/teammate-username/repository-name.git (fetch)
 teammate https://github.com/teammate-username/repository-name.git (push)
 ```
@@ -68,12 +69,30 @@ $ git branch -r --list teammate/*
 
 Checkout a tracking branch:
 ```sh
-$ git checkout -b teammate-feature-branch teammate/eggs-benny-feb
+$ git checkout eggs-benny-feb
 Branch teammate-feature-branch set up to track remote branch eggs-benny-feb from teammate.
 Switched to a new branch 'teammate-feature-branch'
 ```
 
+:bulb: As long as only one of your remotes has a branch called eggs-benny-feb, it knows to create a local tracking branch.
+
+:bulb: If you do not wish to create a tracking branch, you can check out the branch in read-only mode by fully-specifying the branch instead (e.g., `teammate/eggs-benny-feb`)
+
 Now you've switched the code in your directory to a branch containing all of the changes committed to your teammate's branch. If you have your project open in sublime or another text editor you will notice that the source files contain your teammate's changes.
+
+If you run the `git log` command you can see a log of the latest commits made to the current branch:
+```sh
+$ git log
+commit 6b7a7c2bc46753d0d394758b8fd04bcd3b4cf896
+Author: My Teammate <teammate@gr8people.com>
+Date:   Mon Feb 8 12:58:20 2016 -0500
+
+    Adding Eggs Benny February Recipe
+
+...
+```
+
+:bulb: Press enter to scroll through lines <kbd>&amp;</kbd> <kbd>Ctrl</kbd>+<kbd>C</kbd> to exit the log.
 
 Once you are done, you can delete this branch:
 ```sh

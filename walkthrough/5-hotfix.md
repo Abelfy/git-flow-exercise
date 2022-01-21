@@ -2,7 +2,7 @@
 
 | Date | Phase |
 | --- | --- |
-|  February 5<sup>th</sup> | Hotfix |
+|   5 Février | Hotfix |
 
 This morning the project manager received a frantic call from the EIC of _Flavor_ magazine. The app was so successful that the writers have been inundated with emails from readers submitting their own recipes for consideration. The number of emails has been so great that their inboxes are completely useless. The magazine wants your team to remove the writers' email addresses from the app ASAP.
 
@@ -23,14 +23,14 @@ $ git checkout -b hotfix-1.0.1
 # create & switch to hotfix branch
 ```
 
-Bump the patch number contained in the [VERSION](/app/VERSION) file:
+Changez le numéro du patch contenu dans le fichier [VERSION](/app/VERSION) file:
 ```
 major=1
 minor=0
 patch=1
 ```
 
-Stage and commit your change:
+Mettez en attente et livrez votre changement :
 ```
 $ git add app/VERSION
 # stage changes to the version file
@@ -38,26 +38,15 @@ $ git add app/VERSION
 $ git commit -m "Bump version to 1.0.1"
 ```
 
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 2 - Publish the Hotfix Branch
-
+### 2 - Publier la branche Hotfix
 
 __Maintainers__
 
-Choose a maintainer to publish the hotfix branch. This maintainer should push the branch to source:
+Choisissez un responsable pour publier la branche hotfix. Ce responsable doit pousser la branche vers l'origine :
 
 ```sh
-$ git push source hotfix-1.0.1
+$ git push -u origin HEAD
 ```
-
-At this time create a pull request to merge the hotfix branch into `master`, but do not yet merge.
 
 ---
 
@@ -71,15 +60,15 @@ At this time create a pull request to merge the hotfix branch into `master`, but
 
 __Developers__
 
-Fetch the latest from source and create a local tracking branch for the hotfix:
+Fetch the latest from origin and create a local tracking branch for the hotfix:
 
 ```sh
-$ git fetch source
-# fetch latest from source
+$ git fetch origin
+# fetch latest from origin
 
 $ git checkout hotfix-1.0.1
 # checkout the hotfix branch
-Branch hotfix-1.0.1 set up to track remote branch hotfix-1.0.1 from source.
+Branch hotfix-1.0.1 set up to track remote branch hotfix-1.0.1 from origin.
 Switched to a new branch 'hotfix-1.0.1'
 ```
 
@@ -114,7 +103,7 @@ Choose a developer to publish the fixup branch and create a Pull Request against
 
 Publish the branch:
 ```sh
-$ git push origin remove-emails
+$ git push -u me HEAD
 ```
 
 Navigate to your GitHub fork and open the pull request, making sure to request to merge changes into the `hotfix-1.0.1` branch.
@@ -157,16 +146,17 @@ $ git pull
 Merge hotfix into develop, creating a new merge commit (via `--no-ff`):
 ```sh
 $ git checkout develop
-# switch to develop
 
-$ git merge hotfix-1.0.1 --no-ff -m "Merging 1.0.1"
+$ git pull
+
+$ git merge --no-ff hotfix-1.0.1
 ```
 
 :bulb: Always make sure that `develop` is up to date before merging. There may be some merge conflicts that will need to be addressed at this point.
 
-Choose a maintainer to push the the commit up to the source repository:
+Push the commit up to the origin repository:
 ```sh
-$ git push source develop
+$ git push
 ```
 
 ## Next
