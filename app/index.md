@@ -2,9 +2,13 @@
 
 Welcome to _Flavor_, the only place on the planet where your taste buds won't be disappointed!
 
-
-
 ## Picks of the Month
+
+### [test](writer/test.md) | test@flavor.magazine
+
+[template-copy](recipe/feb/template-copy.md)
+
+## Picks of the last Month
 
 ### [Cuba Pudding Jr.](writer/cuba-pudding-jr.md) | cubapud@flavor.magazine
 
