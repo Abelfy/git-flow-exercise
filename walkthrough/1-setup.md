@@ -1,55 +1,58 @@
 # 1. Setup
 
-In order to contribute to a GitHub project, you will need two things: a Fork of the project and a local clone of your Fork.
+Afin de contribuer à un projet GitHub, vous aurez besoin de deux choses : un Fork GitHub et un clone local de ce projet.
 
-## :running: Activities
+## :running: Activités
 
-Follow along with the activities below to get yourself ready for the rest of the walkthrough.
-
-
-### 1 - Fork a Source Repository
-
-__All Team Members__
-
-Fork the source repository:
-   1. Visit https://github.com/source-username/repository-name.
-   2. Click the "fork" button, and choose your personal GitHub account if prompted.
+Suivez les activités ci-dessous pour vous préparer à la suite de l'exercice.
 
 
-### 2 - Clone your Fork
+### 1 - Fork un dépôt de sources
 
-__All Team Members__
+__Tous les membres de l'équipe__
 
-Fork the source repository:
-   1. Visit https://github.com/source-username/repository-name.
-   2. Click the "fork" button, and choose your personal GitHub account if prompted.
+Fork le dépôt de sources :
+   1. Visitez https://github.com/Abelfy/git-flow-exercise/.
+   2. Cliquez sur le bouton "fork", et choisissez votre compte GitHub personnel si vous y êtes invité.
 
-Clone your fork to your local machine:
+---
+
+:cop: :raised_hand: - Please wait until everyone has caught up.
+
+:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
+
+---
+
+### 2 - Cloner votre Fork
+
+__Tous les membres de l'équipe__
+
+Clone this project to your local machine:
 ```sh
 $ cd ~/my/parent/directory
-$ git clone https://github.com/username/repository-name.git
+$ git clone https://github.com/source-username/repository-name.git
 # clone the fork repository from GitHub
 
 $ cd repository-name
 # change working directory to the cloned repository
 ```
 
-View existing remotes:
+Voir les remotes existants :
 ```sh
 $ git remote
 origin
 
 $ git remote -v
-origin https://github.com/username/repository-name.git (fetch)
-origin https://github.com/username/repository-name.git (push)
+origin https://github.com/source-username/repository-name.git (fetch)
+origin https://github.com/source-username/repository-name.git (push)
 ```
 
-You should see an `origin` remote that points to your GitHub fork:
+Vous devriez voir un remote `origin` qui pointe vers le projet GitHub source :
 ```sh
 $ git remote show origin
 * remote origin
-  Fetch URL: https://github.com/username/repository-name.git
-  Push  URL: https://github.com/username/repository-name.git
+  Fetch URL: https://github.com/source-username/repository-name.git
+  Push  URL: https://github.com/source-username/repository-name.git
   HEAD branch: master
   Remote branches:
     develop tracked
@@ -60,7 +63,7 @@ $ git remote show origin
     master  pushes to master (up to date)
 ```
 
-View existing branches:
+Voir les branches existantes :
 ```sh
 $ git branch
 # show local branches
@@ -80,103 +83,75 @@ $ git branch -a
   remotes/origin/master
 ```
 
----
+### 3 - Add Remote for your GitHub Fork
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
+__Tous les membres de l'équipe__
 
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 3 - Add Remote for Source Repository
-
-__All Team Members__
-
-Add a `source` remote:
+Ajoutez un remote `me` :
 ```sh
-$ git remote add source https://github.com/source-username/repository-name.git
-# add the source remote
+$ git remote add me https://github.com/your-username/repository-name.git
+# add the me remote
 
 $ git remote -v
-origin https://github.com/username/repository-name.git (fetch)
-origin https://github.com/username/repository-name.git (push)
-source https://github.com/source-username/repository-name.git (fetch)
-source https://github.com/source-username/repository-name.git (push)
+origin https://github.com/source-username/repository-name.git (fetch)
+origin https://github.com/source-username/repository-name.git (push)
+me https://github.com/your-username/repository-name.git (fetch)
+me https://github.com/your-username/repository-name.git (push)
 ```
 
-You should see a `source` remote that points to the upstream GitHub source repository:
+Vous devriez voir un remote `me` qui pointe vers votre dépôt GitHub Fork :
 ```sh
-$ git remote show source
-* remote origin
-  Fetch URL: https://github.com/source-username/repository-name.git
-  Push  URL: https://github.com/source-username/repository-name.git
+$ git remote show me
+* remote me
+  Fetch URL: https://github.com/your-username/repository-name.git
+  Push  URL: https://github.com/your-username/repository-name.git
   HEAD branch: master
   Remote branches:
-    develop new (next fetch will store in remotes/source)
-    master  new (next fetch will store in remotes/source)
+    develop new (next fetch will store in remotes/me)
+    master  new (next fetch will store in remotes/me)
   Local ref configured for 'git push':
     master  pushes to master (up to date)
 ```
 
-Maintainers will need to create branches and push directly to the source repository.
+Les mainteneurs devront créer des branches et pousser directement vers le dépôt des sources.
 
-All team members will need to pull changes from the source repository and merge them into
-their own branches.
+Tous les membres de l'équipe devront extraire les changements du référentiel source afin de créer des branches pour les fonctionnalités.
 
-Fetch branch data from the `source` remote:
+Récupérez les données de la branche depuis le dépôt distant `origin` :
 ```sh
-$ git fetch source
+$ git fetch origin
 From https://github.com/source-username/repository-name
-* [new branch]      develop    -> source/develop
-* [new branch]      master     -> source/master
+* [new branch]      develop    -> origin/develop
+* [new branch]      master     -> origin/master
 
 $ git branch -a
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/develop
   remotes/origin/master
-  remotes/source/develop
-  remotes/source/master
-
-$ git remote show source
-* remote source
-  Fetch URL: https://github.com/source-username/repository-name.git
-  Push  URL: https://github.com/source-username/repository-name.git
-  HEAD branch: master
-  Remote branches:
-    develop tracked
-    master tracked
-  Local ref configured for 'git push':
-     master pushes to master (up to date)
+  remotes/me/develop
+  remotes/me/master
 ```
 
----
+### 4 - Configurer les branches locales
 
-:cop: :raised_hand: - Please wait until everyone has caught up.
+__Tous les membres de l'équipe__
 
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 4 - Configure Local Branches
-
-__All Team Members__
-
-By now you should have noticed that you do not have a local `develop` branch
+A ce stade, vous devriez avoir remarqué que vous n'avez pas de branche locale `develop`.
 ```sh
-git branch
+$ git branch
 * master
 ```
 
-Create a `develop` branch that tracks from your GitHub fork's `develop` branch:
+Créez une branche `develop` qui suit la branche `develop` de `origin` :
 ```sh
-git branch develop origin/develop
+$ git checkout -b develop --track origin/develop
 Branch develop set up to track remote branch develop from origin
 ```
 
-Notice that viewing the details for the `origin` remote indicates that the local `develop` and `master` branches are configured to push to and pull from your GitHub fork's branches:
+Remarquez que l'affichage des détails pour la branche distante `origin` indique que les branches locales `develop` et `master` sont configurées pour pousser vers et tirer depuis les branches du dépôt GitHub source :
 ```sh
-git remote show origin
+$ git remote show origin
 ...
    Local branches configured for 'git pull':
      develop merges with remote develop
@@ -186,26 +161,18 @@ git remote show origin
      master  pushes to master (up to date)
 ```
 
-:bulb: The `-vv` flag for the `git branch` command will also show the remote branches that are tracked by your local branches (in brackets):
+:bulb: Le drapeau `-vv` pour la commande `git branch` montrera aussi les branches distantes qui sont suivies par vos branches locales (entre cochets) :
 ```sh
-git branch --vv
-  develop 3e03a92 [origin/develop] Create example app
-* master  3e03a92 [origin/master] Create example app
+$ git branch -vv
+* develop 3e03a92 [origin/develop] Create example app
+  master  3e03a92 [origin/master] Create example app
 ```
 
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-You should now be ready to move on to the rest of the walkthrough. If you'd like to see the repository you've created on your local machine in GitHub desktop, you can add a repository by choosing a local path.
+Vous devriez maintenant être prêt à passer à la suite du guide. Si vous souhaitez voir le dépôt que vous avez créé sur votre machine locale dans le bureau GitHub, vous pouvez ajouter un dépôt en choisissant un chemin local.
 
 ## Next
 
-Next we will walk through the process of creating feature branches, publishing changes to GitHub, and making a request to merge changes into the source repository using a Pull Request.
+Ensuite, nous allons suivre le processus de création de branches de fonctionnalités, de publication des modifications sur GitHub et de demande de fusion des modifications dans le référentiel source à l'aide d'une demande de reprise.
 
 [Go](2-feature-branches.md)
 

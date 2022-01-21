@@ -1,35 +1,35 @@
 # Git Flow Exercise
 
-An exercise for learning the [git-flow branching model](http://nvie.com/posts/a-successful-git-branching-model/). This exercise will walk your team through a full release cycle for an example application.
+Un exercice pour apprendre le modèle de branchement git-flow.
+Cet exercice guidera votre équipe à travers un cycle de publication complet pour une application d'exemple.
 
 ## Background
 
-The print magazine _Flavor_ has asked your firm to build and maintain an app so they can share recipes with their hungry audience.
+Le magazine _Flavor_ a demandé à votre entreprise de créer et de maintenir une application afin de pouvoir partager des recettes avec son public affamé.
 
-The typical development cycle for the project is as follows:
+Le cycle de développement typique pour ce projet est le suivant :
 
-- On the 1<sup>st</sup> of every month, your team receives a list of each writer's pick for recipe of the month.
-- On the 15<sup>th</sup> of every month, the new version of the app is pushed to a staging server where the magazine's editors can do a final review.
-- On the last day of the month, the new version of the app is pushed to production.
+- Le 1er de chaque mois, votre équipe reçoit la liste des recettes du mois choisies par chaque rédacteur.
+- Le 15 de chaque mois, la nouvelle version de l'application est poussée vers un serveur de préparation où les rédacteurs du magazine peuvent effectuer une révision finale.
+- Le dernier jour du mois, la nouvelle version de l'application est mise en production.
 
-Development for this project began in January. It is now the beginning of February and the development cycle for `v1.1` of the app has begun.
+Le développement de ce projet a commencé en janvier.
+Nous sommes au début du mois de février et le cycle de développement de la version 1.1 de l'application a commencé.
 
-## Getting Started
 
-Your team will be split between Developers and one or more Maintainers. Maintainers will be responsible for cutting new releases and accepting Pull Requests from other team members. Maintainers should have write access to this repository and Developers should have read access.
 
-### Follow Along
+## Mise en route
 
-Please leave this repository open in a browser tab so that you can follow along with the activities without referring to the presenter's screen.
+Votre équipe sera divisée entre les développeurs et un ou plusieurs mainteneurs. Les mainteneurs seront responsables de la création de nouvelles versions et de l'acceptation des demandes de mise à jour (Pull Request) des autres membres de l'équipe. Les mainteneurs doivent avoir un accès en écriture à ce dépôt et les développeurs doivent avoir un accès en lecture.
 
 ### Project Structure
-* Application code can be found in the [`/app/`](/app/) folder.
-* The application contains a file named [`VERSION`](/app/VERSION) that contains the major, minor, and patch numbers for the project.
-* Source files are written in markdown and can be identified by the `.md` file extension.
+* LE code de l'application se trouvedans le dossier [`/app/`](/app/).
+* L'application contient un fichier nommé [`VERSION`](/app/VERSION) qui contient les numéros de version majeure, mineure et de patch du projet.
+* Les fichiers sources sont écrits en format markdown et peuvent être identifiés par l'extension de fichier .md.
+* 
+## Suivant
 
-## Next
-
-Next we will walk through the process of creating a Fork repository and setting up a local clone.
+Ensuite, nous allons suivre le processus de création d'une branche GitHub et d'un clone local de ce dépôt.
 
 [Go](/walkthrough/1-setup.md)
 
