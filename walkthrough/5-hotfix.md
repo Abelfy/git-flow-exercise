@@ -2,7 +2,7 @@
 
 | Date | Phase |
 | --- | --- |
-|  February 5<sup>th</sup> | Hotfix |
+|   5 Février | Hotfix |
 
 This morning the project manager received a frantic call from the EIC of _Flavor_ magazine. The app was so successful that the writers have been inundated with emails from readers submitting their own recipes for consideration. The number of emails has been so great that their inboxes are completely useless. The magazine wants your team to remove the writers' email addresses from the app ASAP.
 
@@ -23,14 +23,14 @@ $ git checkout -b hotfix-1.0.1
 # create & switch to hotfix branch
 ```
 
-Bump the patch number contained in the [VERSION](/app/VERSION) file:
+Changez le numéro du patch contenu dans le fichier [VERSION](/app/VERSION) file:
 ```
 major=1
 minor=0
 patch=1
 ```
 
-Stage and commit your change:
+Mettez en attente et livrez votre changement :
 ```
 $ git add app/VERSION
 # stage changes to the version file
@@ -38,20 +38,11 @@ $ git add app/VERSION
 $ git commit -m "Bump version to 1.0.1"
 ```
 
----
-
-:cop: :raised_hand: - Please wait until everyone has caught up.
-
-:construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction: :construction:
-
----
-
-### 2 - Publish the Hotfix Branch
-
+### 2 - Publier la branche Hotfix
 
 __Maintainers__
 
-Choose a maintainer to publish the hotfix branch. This maintainer should push the branch to origin:
+Choisissez un responsable pour publier la branche hotfix. Ce responsable doit pousser la branche vers l'origine :
 
 ```sh
 $ git push -u origin HEAD
